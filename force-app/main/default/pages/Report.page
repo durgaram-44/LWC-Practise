@@ -1,0 +1,18 @@
+<apex:page controller="ReportController">
+    <apex:form id="pageForm"  >             
+        <apex:pageBlock >       
+    <div id="responseErrors"></div>
+      
+            <apex:pageBlockSection >  
+                <apex:outputlabel value="Choose a Report"/>   
+                <apex:selectList value="{!selectedreports}" size="10" multiselect="true" >
+                    <apex:selectOptions value="{!Reports}" /> 
+                </apex:selectList>
+            </apex:pageBlockSection> &nbsp;&nbsp;
+            <div align="center">
+                <apex:commandButton action="{!generateReport}"  value="Export" />
+            </div>          
+               
+        </apex:pageBlock>
+    </apex:form>
+    </apex:page>

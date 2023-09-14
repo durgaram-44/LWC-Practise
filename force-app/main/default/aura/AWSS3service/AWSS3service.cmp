@@ -1,0 +1,12 @@
+<aura:component
+  controller="S3ControllerDownload"
+  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+  access="global">
+  <aura:attribute name="data" type="String" />
+  <aura:attribute name="recordId" type="String" />
+  <aura:attribute name="showFileLink" type="boolean" />
+  <lightning:button variant="brand" label="View Files" onclick="{!c.getData}" />
+     <aura:if isTrue="{!v.showFileLink}">
+  		<a href="{!v.data}">Download File</a>
+    </aura:if>
+</aura:component>

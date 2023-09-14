@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Navigation Service in LWC(Lightning Web Components)">
+        <lightning-card title="Navigate To Record Example">
+            <lightning-button label="New Account" onclick={navigateToNewAccountPage}></lightning-button>
+            <lightning-button label="View Account" onclick={navigateToViewAccountPage}></lightning-button>
+            <lightning-button label="Edit Account" onclick={navigateToEditAccountPage}></lightning-button>
+        </lightning-card>
+        <lightning-card title="Navigate To Views">
+            <lightning-button label="Account Recent list View" onclick={navigateToAccountListView}></lightning-button>
+            <lightning-button label="Account Related List" onclick={navigateToContactRelatedList}></lightning-button>
+        </lightning-card>
+        <lightning-card title="Navigate To Home">
+            <lightning-button label="Navigate to Home" onclick={navigateToHomePage}></lightning-button>
+            <lightning-button label="Navigate to Contact Home " class="slds-m-around_medium" onclick={navigateToContactHome}></lightning-button>
+        </lightning-card>
+        <lightning-card title="Navigate To Other">
+            <lightning-button label="Navigate to Chatter Home" onclick={navigateToChatter}></lightning-button>
+            <lightning-button label="Navigate to Reports" onclick={navigateToReports}></lightning-button>
+            <lightning-button label="Navigate to Tab" onclick={navigateToTab}></lightning-button>
+            <lightning-button label="Navigate to SFDCPoint" onclick={navigateToWebPage}></lightning-button>
+            <lightning-button label="Navigate to Files " class="slds-m-around_medium" onclick={navigateToFilesHome}></lightning-button>
+        </lightning-card>
+        <lightning-card title="Navigate To Component">
+            <lightning-button label="Navigate to Visualforce page " onclick={navigateToVFPage}></lightning-button>
+            <lightning-button label="Navigate to Aura Lightning Component " class="slds-m-around_medium" onclick={navigateToLightningComponent}></lightning-button>
+        </lightning-card>
+    </lightning-card> 
+</template>

@@ -1,0 +1,7 @@
+<apex:page Controller="Accountpickletsvalues">
+<Apex:form >
+<apex:selectList value="{!AccountNamelist}">
+<apex:selectOptions value="{!Accountlist}"></apex:selectOptions>
+</apex:selectList>
+</Apex:form>
+</apex:page>

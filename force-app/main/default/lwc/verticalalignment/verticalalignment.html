@@ -1,0 +1,119 @@
+<!--
+  @description       : Vertical alignment
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 09-14-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+
+<template>
+    <div class="slds-card" style="height: 100%;">
+    <lightning-card style="height: 100%;">
+      
+        <lightning-layout>           
+<lightning-layout-item style="background: rgb(190, 181, 199);" padding="around-medium">
+    <lightning-vertical-navigation selected-item={selectedItem} onselect={changeHandleAction} class="navigation">
+        <lightning-vertical-navigation-section label="GenPact Learning Topics" >
+            <lightning-vertical-navigation-item-icon label="Salesforce Adminstration" name="SalesforceAdminstration" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
+            <lightning-vertical-navigation-item-icon label="Integration" name="integration" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
+            <lightning-vertical-navigation-item-icon label="Visualforce" name="visualforce" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
+            <lightning-vertical-navigation-item-icon label="Trigger" name="trigger" icon-name="utility:open_folder"> </lightning-vertical-navigation-item-icon>
+            <lightning-vertical-navigation-item-icon label="Aura Components" name="AuraComponents" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
+            <lightning-vertical-navigation-item-icon label="Salesforce LWC" name="salesforceLwc" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
+        </lightning-vertical-navigation-section>
+    </lightning-vertical-navigation>
+</lightning-layout-item>
+     
+        <lightning-layout-item padding="around-medium">            
+    
+            <template if:true={tutorialValue}>                      
+                <div class="tabContent">
+                    <lightning-tabset active-tab-value="one">
+                        <lightning-tab label="Admin" value="one">
+                            <h3 class="slds-text-heading_small slds-text-color--error"><strong>Salesforce Adminstration :</strong></h3> 
+                            <p>is the place where you can learn step-by-step about Blog, WordPress, Salesforce Lightning Component, Lightning Web Component (LWC),</p> 
+                        </lightning-tab>
+                        <lightning-tab label="Data cloud" value="two">
+                           <c-data-table-in-l-w-c></c-data-table-in-l-w-c>
+                        </lightning-tab>
+                        <lightning-tab label="Service Cloud" value="three">
+                            <lightning-modal-body>
+                                <p>Create Node js Rest Api to get, insert, update and delete records from SOQL Using.</p> 
+                            </lightning-modal-body>
+                            <lightning-modal-footer>
+                                <lightning-button  class="slds-button"
+                                    variant="neutral" label="Cancel" onclick={handleDismiss}
+                                ></lightning-button>
+                                <lightning-button
+                                    class="slds-button slds-m-left_x-small"  variant="brand" label="Save"
+                                ></lightning-button>
+                            </lightning-modal-footer>
+                        </lightning-tab>
+                        <lightning-tab label="Sales Cloud" value="four">
+                            Three Content !
+                        </lightning-tab>
+                        <lightning-tab label="Marketing Cloud" value="five">
+                            Three Content !
+                        </lightning-tab>
+                        <lightning-tab label="DataBase.com" value="six">
+                            Three Content !
+                        </lightning-tab>
+                        <lightning-tab label="Pardot" value="seven">
+                            Three Content !
+                        </lightning-tab>
+                    </lightning-tabset>                        
+                                            
+                </div>
+            </template>
+    
+            <template if:true={integrationValue}>
+                <div class="tabContent">                        
+                    <h3 class="slds-text-heading_small slds-text-color--error"><strong>REST API Integration :</strong></h3>
+                    <p>Create Node js Rest Api to get, insert, update and delete records from SOQL Using.</p>                     
+                    <p>Today in this post we are going to learn about How to Create Node js Rest Api to get, insert, update and delete records from SOQL.</p>
+                    <p> Using Express JS, Install pool database, Install pg and Install localserver to Start port terminal and project structure setup.</p>
+                        
+                </div>
+            </template>
+    
+            <template if:true={visualforceValue}>
+                <div class="tabContent">                       
+                    <h3 class="slds-text-heading_small slds-text-color--error"><strong>Salesforce Visualforce Page :</strong></h3> 
+                    <p>Create visualforce page to retrieve data from multiple custom objects using custom controller wrapper class.</p>                     
+                    <p>Today in this post we are going to learn about how to retrieve data from multiple custom objects using custom controller wrapper class and display data in a table of VF page in Salesforce.</p>
+                        
+                </div>
+            </template>
+    
+            <template if:true={triggerValue}>
+                <div class="tabContent">  
+                    <h3 class="slds-text-heading_small slds-text-color--error"><strong>Triggers :</strong></h3>                      
+                    <p>Write a trigger on lead to prevent duplicate records based on lead email Whenever the records is inserted Or updated using apex class.</p>                     
+                    <p>Today in this post we are going to learn about How to Check Duplicate Email on Lead Object in Salesforce. Write a trigger on lead to prevent duplicate records.</p>
+                    </div>
+            </template>
+    
+        <template if:true={AuraComponentsValue}>
+            <div class="tabContent">                     
+                <h3 class="slds-text-heading_small slds-text-color--error"><strong>Aura Components :</strong></h3> 
+                <p>Write a trigger on lead to prevent duplicate records based on lead email Whenever the records is inserted Or updated using apex class.</p>                     
+                <p>Today in this post we are going to learn about Create a Custom Image Gallery With a Horizontal Thumbnail Carousel Simply using Custom JQuery Small Function and CSS for Create Image Gallery.</p>
+                    
+            </div>
+        </template>
+    
+        <template if:true={salesforceLwcValue}>
+            <div class="tabContent">                       
+                <h3 class="slds-text-heading_small slds-text-color--error"><strong>Salesforce LWC :</strong></h3> 
+                <p>How to fetch/customize the custom metadata and display the list of metadata in lightning component using Apex class in Salesforce Lightning Web Component — LWC.</p>                     
+                <p>Today in this post we are going to learn about How to How to fetch/customize the custom metadata and display the list of metadata in lightning component using Apex class.</p>
+                <p>in Salesforce Lightning Web Component — LWC.</p>
+                    
+            </div>
+        </template>
+       
+        </lightning-layout-item>
+    </lightning-layout>  
+        </lightning-card>
+    </div> 
+</template>

@@ -1,0 +1,5 @@
+<aura:component controller="S3FileController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+   	<ltng:require scripts="/resource/AWSSDK" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:attribute name="recordId" type="String" />
+    <lightning:button variant="brand" label="Download File" onclick="{!c.getFile}" />
+</aura:component>

@@ -1,0 +1,8 @@
+.tabContent{    display:block; padding:15px; font-size:14px; overflow: hidden; width: 70%;}
+.tabContent .postImage{display: inline-block; float:right; } 
+.tabContent .postImage img{border:1px #ddd solid;} 
+.readMore{font-size:14px; font-weight:bold; display:inline-block; padding:0 0 0 10px;} 
+.readMore a{color:#ff0000; text-decoration:none;}
+.readMore a:hover{color:#04a5ca; text-decoration:underline;} 
+.titleTag{font-size:18px;} .titleTag a{color:#003333; font-weight:bold;}
+.imgRt{width:52%; float:left;}
