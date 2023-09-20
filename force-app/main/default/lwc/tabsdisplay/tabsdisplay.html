@@ -1,0 +1,32 @@
+<!--
+  @description       : Tabs displaying
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 09-20-2023
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+        <div class="slds-card" style="height: 100%; background: rgb(190, 181, 199);" >
+            <lightning-card style="height: 100%;"  >          
+                <lightning-layout>  
+                    <lightning-layout-item padding="around-medium">            
+            
+        <lightning-tabset active-tab-value="two">
+            <lightning-tab label="Item One" value="one">
+                <lightning-input label="Name" value={rec.Name} onchange={handleNameChange}></lightning-input>
+                <lightning-input label="Industry" value={rec.Industry} onchange={handleIndChange}></lightning-input>
+                <lightning-input type="Phone" label="Phone" value={rec.Phone} onchange={handlePhnChange}></lightning-input><br/>
+                <lightning-button label="Save" onclick={handleClick}></lightning-button>
+            </lightning-tab>
+            <lightning-tab label="Item Two" value="two">
+                Two Content !
+            </lightning-tab>
+            <lightning-tab label="Item Three" value="three">
+                Three Content !
+            </lightning-tab>
+        </lightning-tabset>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-card>
+        </div>
+</template>
