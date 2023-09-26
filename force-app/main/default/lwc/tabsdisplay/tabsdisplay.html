@@ -2,7 +2,7 @@
   @description       : Tabs displaying
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 09-20-2023
+  @last modified on  : 09-26-2023
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
@@ -11,18 +11,22 @@
                 <lightning-layout>  
                     <lightning-layout-item padding="around-medium">            
             
-        <lightning-tabset active-tab-value="two">
-            <lightning-tab label="Item One" value="one">
-                <lightning-input label="Name" value={rec.Name} onchange={handleNameChange}></lightning-input>
-                <lightning-input label="Industry" value={rec.Industry} onchange={handleIndChange}></lightning-input>
-                <lightning-input type="Phone" label="Phone" value={rec.Phone} onchange={handlePhnChange}></lightning-input><br/>
-                <lightning-button label="Save" onclick={handleClick}></lightning-button>
+        <lightning-tabset active-tab-value="one" style="background: rgb(190, 181, 199);">
+            <lightning-tab label="AccountNewForm" value="one">
+                <lightning-input label="Name" value={rec.Name} onchange={handleNameChange} data-id="reset"></lightning-input>
+                <lightning-input label="Type" value={rec.Type} onchange={handletypChange} data-id="reset"></lightning-input>
+                <lightning-input type="Phone" label="Phone" value={rec.Phone} onchange={handlephonChange} data-id="reset"></lightning-input>
+                <lightning-input label="Annual Revenue" value={rec.AnnualRevenue} onchange={handlerevenueChange} data-id="reset"></lightning-input>
+                <lightning-input label="Website" value={rec.Website} onchange={handlewebChange} data-id="reset"></lightning-input>
+                <lightning-input label="Rating" value={rec.Rating} onchange={handlerateChange} data-id="reset"></lightning-input><br/><br/>
+                <lightning-button label="Cancel" variant="brand" onclick={resetFormAction} ></lightning-button> &nbsp;&nbsp;&nbsp;
+                <lightning-button label="Save" variant="brand" onclick={handleClick} ></lightning-button>
             </lightning-tab>
-            <lightning-tab label="Item Two" value="two">
-                Two Content !
+            <lightning-tab label="AccountViewForm" value="two">
+                <c-data-table-in-l-w-c></c-data-table-in-l-w-c>
             </lightning-tab>
-            <lightning-tab label="Item Three" value="three">
-                Three Content !
+            <lightning-tab label="AccountForm" value="three">
+                
             </lightning-tab>
         </lightning-tabset>
                     </lightning-layout-item>
