@@ -1,8 +1,8 @@
 <!--
-  @description       : Vertical alignment
+  @description       : Hospital Management
   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
   @group             : 
-  @last modified on  : 09-26-2023
+  @last modified on  : 09-29-2023
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 
@@ -11,62 +11,30 @@
     <lightning-card style="height: 100%;">
       
         <lightning-layout>           
-<lightning-layout-item style="background: rgb(190, 181, 199);" padding="around-medium">
+<lightning-layout-item style="background: rgb(176, 216, 243);" padding="around-small" size="2">
     <lightning-vertical-navigation selected-item={selectedItem} onselect={changeHandleAction} class="navigation">
-        <lightning-vertical-navigation-section label="GenPact Learning Topics" >
-            <lightning-vertical-navigation-item-icon label="Salesforce Adminstration" name="SalesforceAdminstration" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
-            <lightning-vertical-navigation-item-icon label="Integration" name="integration" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
-            <lightning-vertical-navigation-item-icon label="Visualforce" name="visualforce" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
-            <lightning-vertical-navigation-item-icon label="Trigger" name="trigger" icon-name="utility:open_folder"> </lightning-vertical-navigation-item-icon>
-            <lightning-vertical-navigation-item-icon label="Aura Components" name="AuraComponents" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
-            <lightning-vertical-navigation-item-icon label="Salesforce LWC" name="salesforceLwc" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
+        <lightning-vertical-navigation-section label="Hospital Management" padding="around-small">
+            <lightning-vertical-navigation-item-icon label="Patient Registration" name="PatientRegistration" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
+            <lightning-vertical-navigation-item-icon label="Appointment Scheduling" name="Appointment" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
+            <lightning-vertical-navigation-item-icon label="Patient Check-In" name="Patient" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
+            <lightning-vertical-navigation-item-icon label="Doctor Dashboard" name="Doctor" icon-name="utility:open_folder"> </lightning-vertical-navigation-item-icon>
+            <lightning-vertical-navigation-item-icon label="Medical Record Management" name="MedicalRecord" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
+           <lightning-vertical-navigation-item-icon label="Integration with Laboratory and Pharmacy Systems" name="PharmacySystems" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
+           <lightning-vertical-navigation-item-icon label="Reporting and Analytics" name="Analytics" icon-name="utility:open_folder"></lightning-vertical-navigation-item-icon>
         </lightning-vertical-navigation-section>
     </lightning-vertical-navigation>
 </lightning-layout-item>
      
         <lightning-layout-item padding="around-medium">            
     
-            <template if:true={tutorialValue}>                      
+            <template if:true={PatientRValue}>                      
                 <div class="tabContent">
-                    <lightning-tabset active-tab-value="one">
-                        <lightning-tab label="Admin" value="one">
-                            <h3 class="slds-text-heading_small slds-text-color--error"><strong>Salesforce Adminstration :</strong></h3> 
-                            <p>is the place where you can learn step-by-step about Blog, WordPress, Salesforce Lightning Component, Lightning Web Component (LWC),</p> 
-                        </lightning-tab>
-                        <lightning-tab label="Data cloud" value="two">
-                           
-                        </lightning-tab>
-                        <lightning-tab label="Service Cloud" value="three">
-                            <lightning-modal-body>
-                                <p>Create Node js Rest Api to get, insert, update and delete records from SOQL Using.</p> 
-                            </lightning-modal-body>
-                            <lightning-modal-footer>
-                                <lightning-button  class="slds-button"
-                                    variant="neutral" label="Cancel" onclick={handleDismiss}
-                                ></lightning-button>
-                                <lightning-button
-                                    class="slds-button slds-m-left_x-small"  variant="brand" label="Save"
-                                ></lightning-button>
-                            </lightning-modal-footer>
-                        </lightning-tab>
-                        <lightning-tab label="Sales Cloud" value="four">
-                            Three Content !
-                        </lightning-tab>
-                        <lightning-tab label="Marketing Cloud" value="five">
-                            Three Content !
-                        </lightning-tab>
-                        <lightning-tab label="DataBase.com" value="six">
-                            Three Content !
-                        </lightning-tab>
-                        <lightning-tab label="Pardot" value="seven">
-                            Three Content !
-                        </lightning-tab>
-                    </lightning-tabset>                        
+                   <P>Text</P>                        
                                             
                 </div>
             </template>
     
-            <template if:true={integrationValue}>
+            <template if:true={AppointmentValue}>
                 <div class="tabContent">                        
                     <h3 class="slds-text-heading_small slds-text-color--error"><strong>REST API Integration :</strong></h3>
                     <p>Create Node js Rest Api to get, insert, update and delete records from SOQL Using.</p>                     
@@ -76,7 +44,7 @@
                 </div>
             </template>
     
-            <template if:true={visualforceValue}>
+            <template if:true={PatientValue}>
                 <div class="tabContent">                       
                     <h3 class="slds-text-heading_small slds-text-color--error"><strong>Salesforce Visualforce Page :</strong></h3> 
                     <p>Create visualforce page to retrieve data from multiple custom objects using custom controller wrapper class.</p>                     
@@ -85,7 +53,7 @@
                 </div>
             </template>
     
-            <template if:true={triggerValue}>
+            <template if:true={DoctorValue}>
                 <div class="tabContent">  
                     <h3 class="slds-text-heading_small slds-text-color--error"><strong>Triggers :</strong></h3>                      
                     <p>Write a trigger on lead to prevent duplicate records based on lead email Whenever the records is inserted Or updated using apex class.</p>                     
@@ -93,7 +61,7 @@
                     </div>
             </template>
     
-        <template if:true={AuraComponentsValue}>
+        <template if:true={MedicalRecordValue}>
             <div class="tabContent">                     
                 <h3 class="slds-text-heading_small slds-text-color--error"><strong>Aura Components :</strong></h3> 
                 <p>Write a trigger on lead to prevent duplicate records based on lead email Whenever the records is inserted Or updated using apex class.</p>                     
@@ -102,7 +70,17 @@
             </div>
         </template>
     
-        <template if:true={salesforceLwcValue}>
+        <template if:true={PharmacySystemsValue}>
+            <div class="tabContent">                       
+                <h3 class="slds-text-heading_small slds-text-color--error"><strong>Salesforce LWC :</strong></h3> 
+                <p>How to fetch/customize the custom metadata and display the list of metadata in lightning component using Apex class in Salesforce Lightning Web Component — LWC.</p>                     
+                <p>Today in this post we are going to learn about How to How to fetch/customize the custom metadata and display the list of metadata in lightning component using Apex class.</p>
+                <p>in Salesforce Lightning Web Component — LWC.</p>
+                    
+            </div>
+        </template>
+        
+        <template if:true={AnalyticsValue}>
             <div class="tabContent">                       
                 <h3 class="slds-text-heading_small slds-text-color--error"><strong>Salesforce LWC :</strong></h3> 
                 <p>How to fetch/customize the custom metadata and display the list of metadata in lightning component using Apex class in Salesforce Lightning Web Component — LWC.</p>                     
