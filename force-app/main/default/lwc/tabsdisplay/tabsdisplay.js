@@ -1,35 +1,54 @@
 import { LightningElement, track} from 'lwc';
-//import ACCOUNT_OBJECT from '@salesforce/schema/Account';
+import ACCOUNT_OBJECT from '@salesforce/schema/Account';
 import NAME_FIELD from '@salesforce/schema/Account.Name';
-import INDUSTRY_FIELD from '@salesforce/schema/Account.Industry';
+import Type_FIELD from '@salesforce/schema/Account.Type';
 import PHONE_FIELD from '@salesforce/schema/Account.Phone';
+import AnnualRevenue_FIELD from '@salesforce/schema/Account.AnnualRevenue';
+import Website_FIELD from '@salesforce/schema/Account.Website';
+import Rating_FIELD from '@salesforce/schema/Account.Rating';
 import createAccount from '@salesforce/apex/createAcc.createAccount';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class tabsdisplay extends LightningElement {
 
     @track name = NAME_FIELD;
-    @track industry = INDUSTRY_FIELD;
+    @track type = Type_FIELD;
     @track phone = PHONE_FIELD;
+    @track annualRevenue = AnnualRevenue_FIELD;
+    @track website = Website_FIELD;
+    @track rating = Rating_FIELD;
     rec = {
-        Name : this.name,
-        Industry : this.industry,
-        Phone : this.phone
+        Name : this.name, //Name  : name__c
+        Type : this.type,
+        Phone : this.phone,
+        AnnualRevenue: this.annualRevenue,
+        Website: this.website,
+        Rating : this.rating
     }
 
     handleNameChange(event) {
         this.rec.Name = event.target.value;
         console.log("name1", this.rec.Name);
     }
-    
-    handleIndChange(event) {
-        this.rec.Industry = event.target.value;
-        console.log("Industry", this.rec.Industry);
+    handletypChange(event) {
+        this.rec.Type = event.target.value;
+         console.log("Type", this.rec.Type);
     }
-    
-    handlePhnChange(event) {
+    handlephonChange(event) {
         this.rec.Phone = event.target.value;
-        console.log("Phone", this.rec.Phone);
+         console.log("Phone", this.rec.Phone);
+    }
+    handlerevenueChange(event) {
+        this.rec.AnnualRevenue = event.target.value;
+        console.log("AnnualRevenue", this.rec.AnnualRevenue);
+    }
+    handlewebChange(event) {
+        this.rec.Website = event.target.value;
+        console.log("Website", this.rec.Website);
+    }
+    handlerateChange(event) {
+        this.rec.Rating = event.target.value;
+        console.log("Rating", this.rec.Rating);
     }
 
     handleClick() {
@@ -37,10 +56,13 @@ export default class tabsdisplay extends LightningElement {
             .then(result => {
                 this.message = result;
                 this.error = undefined;
-                if(this.message !== undefined) {
+                if(this.message !== undefined) { 
                     this.rec.Name = '';
-                    this.rec.Industry = '';
+                    this.rec.Type = '';
                     this.rec.Phone = '';
+                    this.rec.AnnualRevenue='';
+                    this.rec.Website ='';
+                    this.rec.Rating='';
                     this.dispatchEvent(
                         new ShowToastEvent({
                             title: 'Success',
@@ -49,7 +71,9 @@ export default class tabsdisplay extends LightningElement {
                         }),
                     );
                 }
-                
+                this.template.querySelectorAll('lightning-input[data-id="reset"]').forEach(result => {
+                    result.value = null;
+                  });
                 console.log(JSON.stringify(result));
                 console.log("result", this.message);
             })
@@ -66,4 +90,9 @@ export default class tabsdisplay extends LightningElement {
                 console.log("error", JSON.stringify(this.error));
             });
     }
+    resetFormAction(event) {
+        this.template.querySelectorAll('lightning-input[data-id="reset"]').forEach(element => {
+            element.value = null;
+          });
+     }
 }
